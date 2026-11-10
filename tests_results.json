@@ -1,0 +1,54 @@
+{
+ "T1": {
+  "pass": true,
+  "actual": "1005 rows, 5 columns"
+ },
+ "T2": {
+  "pass": true,
+  "actual": "1000 rows; 5 duplicates removed; 15 missing values imputed"
+ },
+ "T3": {
+  "pass": true,
+  "actual": "7 numeric features: Applicant_Income, CIBIL_Score, Loan_Amount, Loan_to_Income, Emp_Salaried, Emp_Self_Employed, Emp_Unemployed"
+ },
+ "T4": {
+  "pass": true,
+  "actual": "800 train / 200 test; approval rate 0.625 vs 0.625"
+ },
+ "T5": {
+  "pass": true,
+  "actual": "model/loan_model.pkl exists and reloads with the same feature columns"
+ },
+ "T6": {
+  "pass": true,
+  "actual": "Accuracy, Precision, Recall, F1, ROC-AUC and CV accuracy produced for every model"
+ },
+ "T7": {
+  "pass": true,
+  "actual": "5 of 5 invalid inputs rejected with ValueError"
+ },
+ "T8": {
+  "pass": true,
+  "actual": "Approved, probability 0.971"
+ },
+ "T9": {
+  "pass": true,
+  "actual": "Identical output on two calls"
+ },
+ "T10": {
+  "pass": true,
+  "actual": "Approval probability for CIBIL 500/600/700/800: 0.070, 0.110, 0.929, 0.969"
+ },
+ "T11": {
+  "pass": true,
+  "actual": "Approval probability for loan 10/25/50/80 Lakhs: 0.977, 0.929, 0.528, 0.403"
+ },
+ "T12": {
+  "pass": true,
+  "actual": "31.9 ms per prediction (mean of 20 calls)"
+ },
+ "T13": {
+  "pass": true,
+  "actual": "Same financial profile: Salaried 0.716 vs Unemployed 0.068"
+ }
+}

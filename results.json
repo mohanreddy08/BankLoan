@@ -1,0 +1,297 @@
+{
+ "raw_shape": [
+  1005,
+  5
+ ],
+ "missing": {
+  "Applicant_Income": 9,
+  "CIBIL_Score": 6,
+  "Loan_Amount": 0,
+  "Employment_Status": 0,
+  "Loan_Status": 0
+ },
+ "dups": 5,
+ "class_raw": {
+  "Approved": 628,
+  "Rejected": 377
+ },
+ "describe": {
+  "Applicant_Income": {
+   "count": 996.0,
+   "mean": 5.95,
+   "std": 3.17,
+   "min": 0.8,
+   "25%": 3.68,
+   "50%": 5.46,
+   "75%": 7.51,
+   "max": 22.27
+  },
+  "CIBIL_Score": {
+   "count": 999.0,
+   "mean": 701.89,
+   "std": 85.52,
+   "min": 440.0,
+   "25%": 644.0,
+   "50%": 704.0,
+   "75%": 760.5,
+   "max": 900.0
+  },
+  "Loan_Amount": {
+   "count": 1005.0,
+   "mean": 19.42,
+   "std": 14.74,
+   "min": 1.0,
+   "25%": 8.41,
+   "50%": 15.62,
+   "75%": 27.42,
+   "max": 95.82
+  }
+ },
+ "emp_counts": {
+  "Salaried": 580,
+  "Self-Employed": 307,
+  "Unemployed": 118
+ },
+ "clean_shape": [
+  1000,
+  5
+ ],
+ "class_clean": {
+  "Approved": 625,
+  "Rejected": 375
+ },
+ "features": [
+  "Applicant_Income",
+  "CIBIL_Score",
+  "Loan_Amount",
+  "Loan_to_Income",
+  "Emp_Salaried",
+  "Emp_Self_Employed",
+  "Emp_Unemployed"
+ ],
+ "corr_target": {
+  "Applicant_Income": 0.08,
+  "CIBIL_Score": 0.69,
+  "Loan_Amount": -0.06,
+  "Loan_to_Income": -0.2,
+  "Emp_Salaried": 0.13,
+  "Emp_Self_Employed": 0.01,
+  "Emp_Unemployed": -0.22,
+  "Approved": 1.0
+ },
+ "split": [
+  800,
+  200
+ ],
+ "test_class": {
+  "Approved": 125,
+  "Rejected": 75
+ },
+ "results": {
+  "Majority-class baseline": {
+   "Accuracy": 0.625,
+   "Precision": 0.625,
+   "Recall": 1.0,
+   "F1": 0.7692307692307693,
+   "AUC": 0.5,
+   "CV_mean": 0.625,
+   "CV_std": 0.0,
+   "Train_acc": 0.625,
+   "CM": [
+    [
+     0,
+     75
+    ],
+    [
+     0,
+     125
+    ]
+   ]
+  },
+  "Decision Tree": {
+   "Accuracy": 0.845,
+   "Precision": 0.8790322580645161,
+   "Recall": 0.872,
+   "F1": 0.8755020080321285,
+   "AUC": 0.8982933333333334,
+   "CV_mean": 0.8724999999999999,
+   "CV_std": 0.015103807466993226,
+   "Train_acc": 0.93375,
+   "CM": [
+    [
+     60,
+     15
+    ],
+    [
+     16,
+     109
+    ]
+   ]
+  },
+  "Random Forest": {
+   "Accuracy": 0.875,
+   "Precision": 0.8968253968253969,
+   "Recall": 0.904,
+   "F1": 0.900398406374502,
+   "AUC": 0.9300266666666666,
+   "CV_mean": 0.89625,
+   "CV_std": 0.016105123408406405,
+   "Train_acc": 0.97625,
+   "CM": [
+    [
+     62,
+     13
+    ],
+    [
+     12,
+     113
+    ]
+   ]
+  }
+ },
+ "best": "Random Forest",
+ "importance": {
+  "Decision Tree": {
+   "Applicant_Income": 0.017,
+   "CIBIL_Score": 0.773,
+   "Loan_Amount": 0.029,
+   "Loan_to_Income": 0.114,
+   "Emp_Salaried": 0.015,
+   "Emp_Self_Employed": 0.0,
+   "Emp_Unemployed": 0.052
+  },
+  "Random Forest": {
+   "Applicant_Income": 0.084,
+   "CIBIL_Score": 0.652,
+   "Loan_Amount": 0.09,
+   "Loan_to_Income": 0.116,
+   "Emp_Salaried": 0.014,
+   "Emp_Self_Employed": 0.008,
+   "Emp_Unemployed": 0.035
+  }
+ },
+ "examples": [
+  {
+   "inp": [
+    12.0,
+    780,
+    20.0,
+    "Salaried"
+   ],
+   "out": [
+    "Approved",
+    0.9707246830681653
+   ]
+  },
+  {
+   "inp": [
+    4.0,
+    540,
+    30.0,
+    "Self-Employed"
+   ],
+   "out": [
+    "Rejected",
+    0.053784748798603566
+   ]
+  },
+  {
+   "inp": [
+    2.5,
+    710,
+    15.0,
+    "Unemployed"
+   ],
+   "out": [
+    "Rejected",
+    0.06795146520146521
+   ]
+  },
+  {
+   "inp": [
+    8.0,
+    650,
+    25.0,
+    "Salaried"
+   ],
+   "out": [
+    "Rejected",
+    0.2640448536280406
+   ]
+  },
+  {
+   "inp": [
+    15.0,
+    820,
+    40.0,
+    "Self-Employed"
+   ],
+   "out": [
+    "Approved",
+    0.9637201902603677
+   ]
+  }
+ ],
+ "predict_repeat": [
+  [
+   "Approved",
+   0.9707246830681653
+  ],
+  [
+   "Approved",
+   0.9707246830681655
+  ]
+ ],
+ "mono_cibil": [
+  [
+   500,
+   0.07
+  ],
+  [
+   600,
+   0.11
+  ],
+  [
+   700,
+   0.929
+  ],
+  [
+   800,
+   0.969
+  ]
+ ],
+ "mono_loan": [
+  [
+   10,
+   0.977
+  ],
+  [
+   25,
+   0.929
+  ],
+  [
+   50,
+   0.528
+  ],
+  [
+   80,
+   0.403
+  ]
+ ],
+ "heldout_example": {
+  "row": {
+   "Applicant_Income": 9.36,
+   "CIBIL_Score": 833.0,
+   "Loan_Amount": 11.16,
+   "Employment_Status": "Salaried"
+  },
+  "actual": "Approved",
+  "pred": "Approved"
+ },
+ "versions": {
+  "py": "3.x",
+  "sklearn": "1.6.0",
+  "pandas": "2.2.3",
+  "numpy": "2.2.6"
+ }
+}
